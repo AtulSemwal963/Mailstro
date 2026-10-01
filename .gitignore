@@ -13,6 +13,8 @@ bower_components/
 dist/
 out/
 build/
+release/
+backend/
 
 # Native node-gyp build directories
 /build/Release/

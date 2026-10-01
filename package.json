@@ -1,7 +1,7 @@
 {
   "name": "mailstro",
   "version": "1.0.0",
-  "description": "Mailstro:Desktop outbound automation application",
+  "description": "Mailstro: Desktop outbound automation application",
   "license": "ISC",
   "author": "Mailstro",
   "type": "commonjs",
