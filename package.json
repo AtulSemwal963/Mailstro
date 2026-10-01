@@ -1,0 +1,82 @@
+{
+  "name": "mailstro",
+  "version": "1.0.0",
+  "description": "Mailstro:Desktop outbound automation application",
+  "license": "ISC",
+  "author": "Mailstro",
+  "type": "commonjs",
+  "main": "dist-electron/main/index.js",
+  "scripts": {
+    "dev": "node scripts/dev-electron.cjs",
+    "dev:renderer": "vite",
+    "build": "tsc -p tsconfig.node.json && vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "package": "npm run build && electron-builder",
+    "package:dir": "npm run build && electron-builder --dir",
+    "package:win": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.103.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "electron": "^44.4.3",
+    "electron-builder": "^26.15.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0",
+    "wait-on": "^9.1.0"
+  },
+  "build": {
+    "appId": "com.mailstro.desktop",
+    "productName": "Mailstro",
+
+    "asar": true,
+
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "package.json"
+    ],
+
+    "extraResources": [
+      {
+        "from": "backend/mailstro-backend.exe",
+        "to": "backend/mailstro-backend.exe"
+      }
+    ],
+
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mailstro",
+      "runAfterFinish": true
+    }
+  }
+}

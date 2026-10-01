@@ -1,0 +1,63 @@
+# ==========================================
+# Dependencies (Including Node Modules)
+# ==========================================
+node_modules/
+jspm_packages/
+bower_components/
+
+
+# ==========================================
+# Electron & Native Build Artifacts
+# ==========================================
+# Electron-builder and Electron-forge output directories
+dist/
+out/
+build/
+
+# Native node-gyp build directories
+/build/Release/
+/.node-gyp/
+
+# Crash dumps and log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+
+
+# ==========================================
+# IDES & Editors (VS Code / JetBrains)
+# ==========================================
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+.idea/
+*.iml
+
+
+# ==========================================
+# Environment & Security (NEVER COMMIT)
+# ==========================================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
