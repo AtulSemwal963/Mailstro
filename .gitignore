@@ -10,11 +10,11 @@ bower_components/
 # Electron & Native Build Artifacts
 # ==========================================
 # Electron-builder and Electron-forge output directories
-dist/
-out/
-build/
-release/
-backend/
+/dist/
+/out/
+/build/
+/release/
+/backend/
 
 # Native node-gyp build directories
 /build/Release/
